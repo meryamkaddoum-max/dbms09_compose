@@ -11,18 +11,19 @@ services:
     networks:
       - backend
 
- api:
-  build: ./api
-  ports:
-    - "8000:8000"
-  depends_on:
-    - postgres
-  env_file: .env
-  networks:
-    - backend
+  api:
+    build: ./api
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgres
+    env_file: .env
+    networks:
+      - backend
 
 volumes:
   pg_data:
 
 networks:
   backend:
+
